@@ -1,28 +1,13 @@
 #!/usr/bin/env bash
 
 PORT=8000
+#HOST=172.17.0.3
+HOST=127.0.0.1
+
 echo "Port: $PORT"
 
 # POST method predict
-curl -d '{  
-   "CHAS":{  
-      "0":0
-   },
-   "RM":{  
-      "0":6.575
-   },
-   "TAX":{  
-      "0":296.0
-   },
-   "PTRATIO":{  
-      "0":15.3
-   },
-   "B":{  
-      "0":396.9
-   },
-   "LSTAT":{  
-      "0":4.98
-   }
+curl -d '{"SL":0.07471338, "SW":0.09794497, "PL":0.02951407, "PW": 0.01150299
 }'\
      -H "Content-Type: application/json" \
-     -X POST http://localhost:$PORT/predict
+     -X POST http://$HOST:$PORT/predict
